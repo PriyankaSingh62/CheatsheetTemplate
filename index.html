@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheatSheet Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">CheatSheet Template</h1>
+            <p class="subtitle">Quick reference guide</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search cheatsheet..." class="search-input">
+                <button id="clearSearch" class="clear-btn">×</button>
+            </div>
+        </header>
+
+        <div class="controls">
+            <button id="toggleTheme" class="btn btn-secondary">🌙 Dark Mode</button>
+            <button id="toggleLayout" class="btn btn-secondary">📋 Toggle Layout</button>
+            <button id="printBtn" class="btn btn-secondary">🖨️ Print</button>
+        </div>
+
+        <main class="cheatsheet-container">
+            <section class="cheatsheet-section" data-category="basics">
+                <h2 class="section-title">Basics</h2>
+                <div class="items-grid">
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">HTML Boilerplate</h3>
+                        <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">CSS Reset</h3>
+                        <pre class="code-block"><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Flexbox Center</h3>
+                        <pre class="code-block"><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cheatsheet-section" data-category="javascript">
+                <h2 class="section-title">JavaScript</h2>
+                <div class="items-grid">
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Array Methods</h3>
+                        <pre class="code-block"><code>// Map
+const doubled = numbers.map(n => n * 2);
+
+// Filter
+const evens = numbers.filter(n => n % 2 === 0);
+
+// Reduce
+const sum = numbers.reduce((a, b) => a + b, 0);</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Async/Await</h3>
+                        <pre class="code-block"><code>async function fetchData() {
+    try {
+        const response = await fetch('/api/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Destructuring</h3>
+                        <pre class="code-block"><code>// Object destructuring
+const { name, age } = person;
+
+// Array destructuring
+const [first, second] = array;
+
+// Function parameter destructuring
+function greet({ name, age }) {
+    return `Hello ${name}, you are ${age}`;
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cheatsheet-section" data-category="css">
+                <h2 class="section-title">CSS</h2>
+                <div class="items-grid">
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Grid Layout</h3>
+                        <pre class="code-block"><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Media Queries</h3>
+                        <pre class="code-block"><code>@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 2rem;
+    }
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">CSS Variables</h3>
+                        <pre class="code-block"><code>:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --font-size: 16px;
+}
+
+.element {
+    color: var(--primary-color);
+    font-size: var(--font-size);
+}</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cheatsheet-section" data-category="git">
+                <h2 class="section-title">Git Commands</h2>
+                <div class="items-grid">
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Basic Commands</h3>
+                        <pre class="code-block"><code>git init
+git add .
+git commit -m "message"
+git push origin main
+git pull origin main</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Branch Operations</h3>
+                        <pre class="code-block"><code>git branch                    # List branches
+git branch new-feature        # Create branch
+git checkout new-feature      # Switch branch
+git merge new-feature         # Merge branch
+git branch -d new-feature     # Delete branch</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    
+                    <div class="cheatsheet-item">
+                        <h3 class="item-title">Undo Changes</h3>
+                        <pre class="code-block"><code>git checkout -- file.txt     # Discard changes
+git reset HEAD file.txt      # Unstage file
+git revert commit-hash       # Revert commit
+git reset --hard HEAD~1      # Remove last commit</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 CheatSheet Template. Created with HTML, CSS, and JavaScript.</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
